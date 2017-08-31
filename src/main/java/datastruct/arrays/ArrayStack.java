@@ -5,7 +5,7 @@ import datastruct.interfaces.StackInterface;
 
 import java.util.Iterator;
 
-public class Stack<Item> implements StackInterface<Item>, Iterable<Item> {
+public class ArrayStack<Item> implements StackInterface<Item>, Iterable<Item> {
     private final static int RESIZE_COEF_ = 2;
     private static int ZERO_CAPACITY = 0;
 
@@ -30,7 +30,7 @@ public class Stack<Item> implements StackInterface<Item>, Iterable<Item> {
         Item poppedItem = arr[currIndex--];
         arr[currIndex] = null; //avoid loitering
         if (currIndex > ZERO_CAPACITY && currIndex == arr.length / 4) {
-            resize(arr.length / 2);
+            resize(arr.length / RESIZE_COEF_);
         }
         return poppedItem;
     }

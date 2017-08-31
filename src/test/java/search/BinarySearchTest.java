@@ -19,6 +19,7 @@ public class BinarySearchTest {
         int target = 3;
         assert (arr[1] == target && BinarySearch.find(target, arr) == 1);
     }
+
     @Test
     public void testSearchOneElementArray() {
         int[] arr = {1};

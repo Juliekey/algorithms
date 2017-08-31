@@ -1,6 +1,7 @@
 package datastruct.linkedlist;
 
 
+import datastruct.AbstractTest;
 import org.junit.Before;
 import org.junit.Test;
 

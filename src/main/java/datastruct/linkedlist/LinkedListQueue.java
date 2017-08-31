@@ -4,7 +4,7 @@ import datastruct.interfaces.QueueInterface;
 
 import java.util.Iterator;
 
-public class Queue<Item> implements QueueInterface<Item>, Iterable<Item> {
+public class LinkedListQueue<Item> implements QueueInterface<Item>, Iterable<Item> {
     private Node<Item> first;
     private Node<Item> last;
     private int size;

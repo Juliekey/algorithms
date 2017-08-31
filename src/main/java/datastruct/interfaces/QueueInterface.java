@@ -1,6 +1,6 @@
 package datastruct.interfaces;
 
-public interface QueueInterface<Item> {
+public interface QueueInterface<Item> extends Iterable<Item> {
 
     void enqueue(Item item);
 

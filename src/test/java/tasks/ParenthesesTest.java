@@ -6,9 +6,9 @@ public class ParenthesesTest {
     @Test
     public void testParanthesesRightCase() {
         String src1 = "{[()]}";
-        assert Parentheses.areParenthesesRight(src1) ;
+        assert Parentheses.areParenthesesRight(src1);
         String src2 = "[()]{}{[()()]()}";
-        assert Parentheses.areParenthesesRight(src2) ;
+        assert Parentheses.areParenthesesRight(src2);
     }
 
     @Test

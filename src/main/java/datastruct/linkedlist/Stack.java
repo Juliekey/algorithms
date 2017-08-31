@@ -4,21 +4,37 @@ import datastruct.interfaces.StackInterface;
 
 public class Stack<Item> implements StackInterface<Item> {
 
-    private Node<Item> first;
+    private Node<Item> head;
     private int size;
 
+    public Stack() {
+    }
+
+    //TODO items need to be cloned, not just moved
+    public Stack(Stack<Item> stack) {
+        Stack<Item> tempStack = new Stack<>();
+        while (!stack.isEmpty()) {
+            Item poppedItem = stack.pop();
+            tempStack.push(poppedItem);
+        }
+        while (!tempStack.isEmpty()) {
+            Item poppedItem = tempStack.pop();
+            stack.push(poppedItem);
+            this.push(poppedItem);
+        }
+    }
 
     public void push(Item item) {
-        Node oldFirst = first;
-        this.first = new Node();
-        first.setItem(item);
-        first.setNext(oldFirst);
+        Node oldFirst = head;
+        this.head = new Node();
+        head.setItem(item);
+        head.setNext(oldFirst);
         size++;
     }
 
     public Item pop() {
-        Item item = first.getItem();
-        first = first.getNext();
+        Item item = head.getItem();
+        head = head.getNext();
         size--;
         return item;
     }
@@ -30,5 +46,15 @@ public class Stack<Item> implements StackInterface<Item> {
 
     public int size() {
         return size;
+    }
+
+    public Stack<Item> gerReversed() {
+        Stack<Item> newStack = new Stack<>();
+        Stack<Item> tempStack = new Stack<>(this);
+
+        while (!tempStack.isEmpty()) {
+            newStack.push(tempStack.pop());
+        }
+        return newStack;
     }
 }

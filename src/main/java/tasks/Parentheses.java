@@ -11,9 +11,9 @@ public class Parentheses {
     public static char CLOSED_PARENTHESES = ')';
 
     /**
-     *
      * checks if the value popped from stack is opposite parantheses to the current character.
      * If
+     *
      * @param src
      * @return
      */
@@ -21,7 +21,7 @@ public class Parentheses {
         Stack<Character> characterStack = new Stack<>();
         for (int i = 0, n = src.length(); i < n; i++) {
             Character currentChar = src.charAt(i);
-            if (currentChar == CLOSED_BRACKET ) {
+            if (currentChar == CLOSED_BRACKET) {
                 if (characterStack.pop() != OPEN_BRACKET) {
                     return false;
                 }

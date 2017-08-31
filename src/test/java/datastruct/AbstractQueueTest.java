@@ -1,14 +1,15 @@
-package datastruct.linkedlist;
+package datastruct;
 
+import datastruct.interfaces.QueueInterface;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ConcurrentModificationException;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class QueueTest extends AbstractTest {
-    Queue<Integer> queue = new Queue<>();
+public abstract class AbstractQueueTest extends AbstractTest {
+    protected static QueueInterface<Integer> queue;
+
 
     @Before
     public void fillQueue() {
@@ -51,5 +52,4 @@ public class QueueTest extends AbstractTest {
             i++;
         }
     }
-
 }
