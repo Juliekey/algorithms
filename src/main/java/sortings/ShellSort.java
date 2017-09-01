@@ -1,5 +1,7 @@
 package sortings;
-//TODO
+
+import tasks.ArraysUtil;
+
 public class ShellSort {
     public static void sort(Comparable[] arr) {
         int arrLen = arr.length;
@@ -7,16 +9,19 @@ public class ShellSort {
         while (gap < arrLen / 3) {
             gap = gap * 3 + 1;
         }
-        for (int i = 1; i < arrLen; i++) {
-            for (int j = i; j > gap ; j++) {
-
+        while (gap >= 1) {
+            for (int i = gap; i < arrLen; i++) {
+                for (int j = i; j >= gap; j -= gap) {
+                    if (arr[j].compareTo(arr[j - gap]) < 0) {
+                        ArraysUtil.swap(arr, j, j - gap);
+                    }
+                }
             }
+            gap /= 3;
         }
     }
 
-    private static void swap(Comparable[] a, int i, int j) {
-        Comparable temp = a[j];
-        a[j] = a[i];
-        a[i] = temp;
-    }
+
 }
+
+
