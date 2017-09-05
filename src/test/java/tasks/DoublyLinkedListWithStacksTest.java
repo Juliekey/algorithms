@@ -1,8 +1,10 @@
 package tasks;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +17,7 @@ class DoublyLinkedListWithStacksTest {
     public final static int NUMB_OF_ELEMENTS = 5;
     public final static Random random = ThreadLocalRandom.current();
 
-    @BeforeEach
+    @Before
     public void setUp() {
         for (int i = 0; i < NUMB_OF_ELEMENTS; i++) {
             Integer randomInt = random.nextInt();
@@ -25,7 +27,7 @@ class DoublyLinkedListWithStacksTest {
 
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         list = new DoublyLinkedListWithStacks<>();
     }

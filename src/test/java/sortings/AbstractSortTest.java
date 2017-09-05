@@ -1,6 +1,6 @@
 package sortings;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Before;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,7 +12,7 @@ public class AbstractSortTest {
     public final static int NUMB_OF_EL = 10;
     public final static int BOUND = 100;
 
-    @BeforeEach
+    @Before
     public void prepareRandomArr() {
         arr = new Integer[NUMB_OF_EL];
         testArr = new Integer[NUMB_OF_EL];

@@ -1,9 +1,9 @@
 package sortings;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 class SelectionSortTest extends AbstractSortTest {
     @Test

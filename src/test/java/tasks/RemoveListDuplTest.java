@@ -1,8 +1,8 @@
 package tasks;
 
 import datastruct.linkedlist.DoublyLinkedListNode;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -17,7 +17,7 @@ class RemoveListDuplTest {
     public final static int RANGE = 5;
     static Set<Integer> testData = new HashSet<>();
 
-    @BeforeAll
+    @Before
     public static void setUp() {
         Random random = ThreadLocalRandom.current();
         DoublyLinkedListNode<Integer> copy = node;

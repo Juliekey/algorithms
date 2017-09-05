@@ -1,8 +1,10 @@
 package search;
 
+
 import org.junit.Test;
 
 import java.util.Arrays;
+
 
 public class BinarySearchTest {
     @Test
@@ -37,9 +39,10 @@ public class BinarySearchTest {
 
     @Test(expected = NullPointerException.class)
     public void testWithNull() {
-
-        int[] arr = null;
-        int target = 3;
-        assert (BinarySearch.find(target, arr) == -1);
+//        assertThrows(NullPointerException.class, () -> {
+            int[] arr = null;
+            int target = 3;
+            assert (BinarySearch.find(target, arr) == -1);
+//        });
     }
 }

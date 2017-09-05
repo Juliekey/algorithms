@@ -1,7 +1,7 @@
 package datastruct.union;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,7 +12,7 @@ class WeightedQuickUnionUFTest {
     Random random = ThreadLocalRandom.current();
     WeightedQuickUnionUF weightedQuickUnionUF;
 
-    @BeforeEach
+    @Before
     public void createUF() {
         weightedQuickUnionUF = new WeightedQuickUnionUF(ARR_LENGTH);
     }
