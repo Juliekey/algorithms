@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-class DoublyLinkedListWithStacksTest {
+public class DoublyLinkedListWithStacksTest {
     DoublyLinkedListWithStacks<Integer> list = new DoublyLinkedListWithStacks<>();
     List<Integer> testData = new LinkedList<>();
     public final static int NUMB_OF_ELEMENTS = 5;
@@ -33,7 +33,7 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void addFirst() {
+    public void addFirst() {
         int size = list.size();
         Integer randomInt = random.nextInt();
         list.addFirst(randomInt);
@@ -51,7 +51,7 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void addLast() {
+    public void addLast() {
         int size = list.size();
         Integer randomInt = random.nextInt();
         list.addLast(randomInt);
@@ -69,7 +69,7 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void removeFirst() {
+    public void removeFirst() {
         Integer randomInt = random.nextInt();
 
         list.addFirst(randomInt);
@@ -82,7 +82,7 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void removeLast() {
+    public void removeLast() {
         Integer randomInt = random.nextInt();
 
         list.addLast(randomInt);
@@ -95,7 +95,7 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void remove() {
+    public void remove() {
         Integer randomInt = random.nextInt();
 
         list.addLast(randomInt);
@@ -111,12 +111,12 @@ class DoublyLinkedListWithStacksTest {
     }
 
     @Test
-    void size() {
+   public void size() {
         assert list.size() == testData.size();
     }
 
     @Test
-    void iterator() {
+    public void iterator() {
         final Object[] objects = testData.toArray();
         for (int i = 0; i < 5; i++) {
             int cnt = 0;
