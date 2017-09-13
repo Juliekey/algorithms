@@ -21,4 +21,11 @@ public class Node<Item> {
 
     private Node next;
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "item=" + item +
+                ", next=" + next +
+                '}';
+    }
 }
