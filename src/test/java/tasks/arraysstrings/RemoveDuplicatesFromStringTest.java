@@ -8,19 +8,19 @@ public class RemoveDuplicatesFromStringTest {
 
     @Test
     public void removeDuplicatesNoDupl() throws Exception {
-        char[] str = {'a', 'b', 'c', 'd'};
-        char[] copy = Arrays.copyOf(str, str.length);
-        RemoveDuplicatesFromString.removeDuplicates(str);
-        System.out.println(str);
-        assert copy.equals(str);
+        Character[] str = {'a', 'b', 'c', 'd'};
+        Character[] copy = Arrays.copyOf(str, str.length);
+        str = RemoveDuplicatesFromString.removeDuplicates(str);
+        System.out.println(Arrays.toString(str));
+        assert Arrays.equals(copy, str);
     }
 
     @Test
     public void removeDuplicatesWithDupl() throws Exception {
-        char[] str = {'a', 'b', 'b', 'c', 'd', 'c', 'd'};
-        char[] right = {'a', 'b', 'c', 'd'};
-        RemoveDuplicatesFromString.removeDuplicates(str);
-        System.out.println(str);
-        assert right.equals(str);
+        Character[] str = {'a', 'b', 'b', 'c', 'd', 'c', 'd'};
+        Character[] right = {'a', 'b', 'c', 'd'};
+        str = RemoveDuplicatesFromString.removeDuplicates(str);
+        System.out.println(Arrays.toString(str));
+        assert Arrays.equals(right, str);
     }
 }

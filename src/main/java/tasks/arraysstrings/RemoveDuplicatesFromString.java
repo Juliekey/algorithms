@@ -1,30 +1,31 @@
 package tasks.arraysstrings;
 
+import tasks.ArraysUtil;
+
+import java.util.Arrays;
+
 public class RemoveDuplicatesFromString {
-    public static void removeDuplicates(char[] chars) {
+    public static Character[] removeDuplicates(Character[] chars) {
         if (chars == null) {
-            return;
+            return null;
         }
         int n = chars.length;
-        int tail = 1;
+        int beginInex = 0;
+        Character[] copyChars = Arrays.copyOf(chars, chars.length);
         if (n < 2) {
-            return;
+            return copyChars;
         }
         for (int i = 1; i < n; i++) {
             int j;
-            for (j = 0; j < tail; j++) {
-                if (chars[i] == chars[j]) {
+            for (j = beginInex; j < i; j++) {
+                if (copyChars[i] == copyChars[j]) {
+                    ArraysUtil.swap(copyChars, beginInex, j);
+                    beginInex++;
                     break;
                 }
             }
-            if (j == tail) {
-                chars[tail] = chars[i];
-                tail++;
-            }
-
-
         }
-
-        chars[tail] = 0;
+        return Arrays.copyOfRange(copyChars, beginInex, copyChars.length);
     }
+
 }
